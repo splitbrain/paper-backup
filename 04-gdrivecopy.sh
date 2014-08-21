@@ -26,5 +26,11 @@ if [ ! -f "$LOCAL" ]; then
     exit 1
 fi
 
-rclone --config=$HOME/.rclone.conf copy "$LOCAL" "$REMOTE"
-
+for X in 1 2 3; do
+   echo "uploading to Google Drive (try $X)"
+   if rclone --config=$HOME/.rclone.conf copy "$LOCAL" "$REMOTE"; then
+       exit 0
+   fi
+   sleep 15 # wait 15 seconds before retrying
+done
+exit 1
