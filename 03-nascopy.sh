@@ -18,14 +18,16 @@ if [ -z "$2" ]; then
     exit 1
 fi
 
-OUTPUT="$BASE/$0"
-REMOTE="sftp://$2@$HOST/home/$FOLDER/$keyword/$1.pdf"
+OUTPUT="$BASE/$1"
+REMOTE="sftp://$2@$HOST/home/$FOLDER/$3/$1.pdf"
 LOCAL="$OUTPUT/$1.pdf"
 
-if [ -f "$LOCAL" ]; then
+if [ ! -f "$LOCAL" ]; then
     echo "jobid does not exist"
     exit 1
 fi
 
+
+echo copying to $REMOTE
 curl --ftp-create-dirs --insecure -T "$LOCAL" "$REMOTE"
 

@@ -17,14 +17,14 @@ if [ -z "$2" ]; then
     exit 1
 fi
 
-OUTPUT="$BASE/$0"
-REMOTE="$2://$FOLDER/$keyword/"
+OUTPUT="$BASE/$1"
+REMOTE="$2://$FOLDER/$3/"
 LOCAL="$OUTPUT/$1.pdf"
 
-if [ -f "$LOCAL" ]; then
+if [ ! -f "$LOCAL" ]; then
     echo "jobid does not exist"
     exit 1
 fi
 
-rclone copy "$LOCAL" "$REMOTE"
+rclone --config=$HOME/.rclone.conf copy "$LOCAL" "$REMOTE"
 

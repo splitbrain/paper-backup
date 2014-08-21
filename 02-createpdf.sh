@@ -10,9 +10,9 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-OUTPUT="$BASE/$0"
+OUTPUT="$BASE/$1"
 
-if [ -d "$OUTPUT" ]; then
+if [ ! -d "$OUTPUT" ]; then
     echo "jobid does not exist"
     exit 1
 fi
@@ -20,6 +20,7 @@ fi
 cd "$OUTPUT"
 
 # cut borders 
+echo 'cutting borders...'
 for i in scan_*.pnm; do
     mogrify -shave 50x5 "${i}"
 done

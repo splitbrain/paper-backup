@@ -9,7 +9,7 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-OUTPUT="$BASE/$0"
+OUTPUT="$BASE/$1"
 mkdir -p "$OUTPUT"
 
 echo 'scanning...'
