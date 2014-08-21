@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR=$( cd $( dirname "${BASH_SOURCE[0]}" ) && pwd )
 JOBID=`date '+%Y-%m-%d_%H%M%S'`
 USER=$1
 KEYWORD=$2
