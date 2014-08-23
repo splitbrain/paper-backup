@@ -5,7 +5,7 @@ JOBID=`date '+%Y-%m-%d_%H%M%S'`
 USER=$1
 KEYWORD=$2
 
-if [ -z "$USER"]; then
+if [ -z "$USER" ]; then
     echo "Usage: $0 <user> [<keyword>]"
     echo "please give a user"
     exit 1
