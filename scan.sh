@@ -24,6 +24,7 @@ $DIR/01-scan.sh "$JOBID"
         $DIR/02-createpdf.sh "$JOBID"
         $DIR/03-nascopy.sh "$JOBID" "$USER" "$KEYWORD"
         $DIR/04-gdrivecopy.sh "$JOBID" "$USER" "$KEYWORD"
+        $DIR/05-cleanup.sh "$JOBID"
 
     ) 200>/tmp/scan.lock
 ) &
