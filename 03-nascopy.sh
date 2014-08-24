@@ -3,6 +3,7 @@
 BASE="/tmp"
 HOST="diskstation"
 FOLDER="documents"
+YEAR=`date '+%Y'`
 
 if [ -z "$1" ]; then
     echo "Usage: $0 <jobid> <user> [<keyword>]"
@@ -19,7 +20,7 @@ if [ -z "$2" ]; then
 fi
 
 OUTPUT="$BASE/$1"
-REMOTE="sftp://$2@$HOST/home/$FOLDER/$3/$1.pdf"
+REMOTE="sftp://$2@$HOST/home/$FOLDER/$YEAR/$3/$1.pdf"
 LOCAL="$OUTPUT/$1.pdf"
 
 if [ ! -f "$LOCAL" ]; then

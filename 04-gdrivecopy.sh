@@ -2,6 +2,7 @@
 
 BASE="/tmp"
 FOLDER="documents"
+YEAR=`date '+%Y'`
 
 if [ -z "$1" ]; then
     echo "Usage: $0 <jobid> <user> [<keyword>]"
@@ -18,7 +19,7 @@ if [ -z "$2" ]; then
 fi
 
 OUTPUT="$BASE/$1"
-REMOTE="$2://$FOLDER/$3/"
+REMOTE="$2://$FOLDER/$YEAR/$3/"
 LOCAL="$OUTPUT/$1.pdf"
 
 if [ ! -f "$LOCAL" ]; then
