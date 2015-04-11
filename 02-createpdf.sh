@@ -53,7 +53,7 @@ echo 'doing OCR...'
 for i in scan_*.pnm.tif; do
     echo "${i}"
     tesseract "$i" "$i" -l $LANGUAGE hocr
-    hocr2pdf -i "$i" -s -o "$i.pdf" < "$i.html"
+    hocr2pdf -i "$i" -s -o "$i.pdf" < "$i.hocr"
 done
 
 # create PDF
