@@ -19,7 +19,7 @@ fi
 
 cd "$OUTPUT"
 
-# cut borders 
+# cut borders
 echo 'cutting borders...'
 for i in scan_*.pnm; do
     mogrify -shave 50x5 "${i}"

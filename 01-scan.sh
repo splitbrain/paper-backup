@@ -14,8 +14,8 @@ mkdir -p "$OUTPUT"
 
 echo 'scanning...'
 scanimage --resolution 300 \
-	  --batch="$OUTPUT/scan_%03d.pnm" \
+          --batch="$OUTPUT/scan_%03d.pnm" \
           --format=pnm \
           --mode Gray \
-          --source 'ADF Duplex' 
+          --source 'ADF Duplex'
 echo "Output in $OUTPUT/scan*.pnm"
